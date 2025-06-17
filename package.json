@@ -1,0 +1,25 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohamedthayub/w3school-react.git"
+  },
+  "keywords": [
+    "this",
+    "is",
+    "for",
+    "revition"
+  ],
+  "author": "thayub",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mohamedthayub/w3school-react/issues"
+  },
+  "homepage": "https://github.com/Mohamedthayub/w3school-react#readme",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  }
+}
