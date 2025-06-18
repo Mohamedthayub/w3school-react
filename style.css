@@ -9,42 +9,23 @@ body{
     padding: 0px;
     box-sizing: border-box;
 }
-.container{
+
+.box-container{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+    flex-wrap: wrap;
+
 }
-.container1{
-    background-color: tomato;
-    height: 300px;
-    width: 300px;
-    border-radius: 10px;
-    margin: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
+
+h1,h3,p{
+    margin-top: 2px;
 }
-.container2{
-    background-color:yellow;
-    height: 300px;
-    width: 300px;
+.box{
+    margin-top: 10px;
+    background-color: yellow;
+    padding: 10px;
     border-radius: 10px;
-    margin: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
-}
-.container3{
-     background-color:violet;
-    height: 300px;
-    width: 300px;
-    border-radius: 10px;
-    margin: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
+    margin: 5px;
+
 }
