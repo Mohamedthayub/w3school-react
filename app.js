@@ -1,15 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const Heading = () => {
+
+
+const Containers = () => {
     return (
         <div>
-            <h1>Asalamu alaikum</h1>
+            <div className="container1">
+                <h1>Hello</h1>
+            </div>
+            <div className="container2">
+                <h1>Hello</h1>
+            </div>
+            <div className="container3">
+                <h1>Hello</h1>
+            </div>
         </div>
+
     )
 }
+const Layouts = () => {
+  return (
+    <div className="container">
+        <Containers/>
+    </div>
+  );
+};
 
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<Heading/>);
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(<Layouts/>);
