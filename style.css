@@ -9,7 +9,13 @@ body{
     padding: 0px;
     box-sizing: border-box;
 }
-
+.win{
+    color: green;
+}
+.lose{
+    color: red;
+}
+/* 
 .box-container{
     display: flex;
     justify-content: space-around;
@@ -28,4 +34,4 @@ h1,h3,p{
     border-radius: 10px;
     margin: 5px;
 
-}
+} */
