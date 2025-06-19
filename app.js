@@ -7,19 +7,18 @@ const Greater = () => {
 const Lesser = () => {
     return <h1 style={{color : "red"}}>You are not eligible</h1>
 }
-const CheckAge = (props) => {
-    const isGoal = props.isGoal;
-    if(isGoal > 18 ){
-        return <Greater/>
+
+function CheckAge(props){
+    const isage =  props.isage;
+    return <div>  {
+        isage > 18 ? <Greater/> :  <Lesser/>
     }
-    else{
-        return <Lesser/>
-    }
+    </div>
 }
 
 const App = () => {
     return <div>
-    <CheckAge isGoal = {12} ></CheckAge>
+        <CheckAge isage = {18}></CheckAge>
     </div>
 }
 
