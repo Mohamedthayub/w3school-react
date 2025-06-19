@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+
+.cart{
+    background-color: yellow;
+    border-radius:5px;
+    padding: 10px;
+    
+}
