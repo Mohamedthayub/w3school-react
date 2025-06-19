@@ -15,7 +15,7 @@ let people = [
 ];
 
 const Card = (props) => {
-    const {name,role} = props;
+    const {name,role } = props.resData;
     return (
         <div>
             <div className="cart">
@@ -28,7 +28,10 @@ const Card = (props) => {
 const App = () => {
     return <div>
         <div className="container">
-            {people.map((data) => <Card key = {data.id} name = {data.name} role ={data.role} ></Card>)}
+            {/* {people.map((data) => <Card key = {data.id} name = {data.name} role ={data.role} ></Card>)} */}
+            {people.map((data) => (
+                <Card resData = {data} key = {data.id}/>
+            ))}
         </div>
     </div>
 }
