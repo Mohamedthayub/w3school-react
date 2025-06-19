@@ -14,13 +14,13 @@ let people = [
     { name: "Meena", id : 10, role: "Product Owner" }
 ];
 
-const Card = ({name,role,company}) => {
+const Card = (props) => {
+    const {name,role} = props;
     return (
         <div>
             <div className="cart">
               <h1>{name}</h1>
               <p>{role}</p>
-              <h5>{company}</h5>
            </div>
         </div>
     )
@@ -28,9 +28,7 @@ const Card = ({name,role,company}) => {
 const App = () => {
     return <div>
         <div className="container">
-            <Card name = "Thayub" role = "Software engineer" company = "Google"></Card>
-            <Card name = "Mohamed" role = "Test engineer" company = "Microsoft"></Card>
-            <Card name = "Mohideen" role = "Devops engineer" company = "Apple"></Card>
+            {people.map((data) => <Card key = {data.id} name = {data.name} role ={data.role} ></Card>)}
         </div>
     </div>
 }
