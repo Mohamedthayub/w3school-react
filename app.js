@@ -1,33 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-
-
-const Name = () => {
-    return (
-        <h1>My Name is Thayub </h1>
-    )
+const Greater = () => {
+    return <h1 style={{color : "green"}}>you are eligible to put vote</h1>
 }
-const NoName = () => {
-    return (
-        <h1> No Name</h1>
-    )
+const Lesser = () => {
+    return <h1 style={{color : "red"}}>You are not eligible</h1>
 }
-function ShowName(props){
-    const isName = props.isName
-    if(isName.length != 0){
-        return  <Name/>
+const CheckAge = (props) => {
+    const isGoal = props.isGoal;
+    if(isGoal > 18 ){
+        return <Greater/>
     }
     else{
-        return <NoName/>
+        return <Lesser/>
     }
 }
-const  App = () => {
-    return (
-        <div>
-            <ShowName isName = {"1"}></ShowName>
-        </div>
-    )
+
+const App = () => {
+    return <div>
+    <CheckAge isGoal = {12} ></CheckAge>
+    </div>
 }
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App/>);
