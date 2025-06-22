@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 
 // let people = [
@@ -13,21 +13,28 @@ import ReactDOM from "react-dom/client";
 //     { name: "Suresh", id : 9, role: "Full Stack Developer" },
 //     { name: "Meena", id : 10, role: "Product Owner" }
 // ];
-const names  = ["thayub","kaja","hussain","karthick","subair","feroz"
-];
-const CreateList = () => {
+
+function  Favourite(){
+    const [color , setcolor] = useState("");
+
     return (
         <div>
-            {names.map((item,index) => (
-                <li key={index}>{item}</li>
-            ))}
+            <h1>This is for Learning UseState {color} </h1>
+            <button className="red-btn" type="button" onClick={ () => setcolor("red")}>red
+            </button>
+            <button className ="blue-btn" type="button" onClick={ () => setcolor("blue")}>blue
+            </button>
+            <button className = "violet-btn" type="button" onClick={ () => setcolor("violet")}>blue
+            </button>
+            <button className = "yellow-btn" type="button" onClick={ () => setcolor("yellow")}>blue
+            </button>
         </div>
     )
 }
 const App = () => {
     return (
         <div>
-            <CreateList/>
+            <Favourite/>
         </div>
     )
 }
