@@ -17,6 +17,9 @@ body{
     /* display: inline; */
     
 }
+li{
+    list-style-type: none;
+}
 /* li{
     list-style-type: none;
     margin-top: 5px;
