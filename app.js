@@ -19,14 +19,18 @@ function  Favourite(){
 
     return (
         <div>
-            <h1>This is for Learning UseState {color} </h1>
+            <h1>This is for Learning UseState  {color} </h1>
+            
             <button className="red-btn" type="button" onClick={ () => setcolor("red")}>red
             </button>
+
             <button className ="blue-btn" type="button" onClick={ () => setcolor("blue")}>blue
             </button>
-            <button className = "violet-btn" type="button" onClick={ () => setcolor("violet")}>blue
+
+            <button className = "violet-btn" type="button" onClick={ () => setcolor("violet")}>violet
             </button>
-            <button className = "yellow-btn" type="button" onClick={ () => setcolor("yellow")}>blue
+
+            <button className = "yellow-btn" type="button" onClick={ () => setcolor("yellow")}>yellow
             </button>
         </div>
     )
@@ -38,6 +42,7 @@ const App = () => {
         </div>
     )
 }
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App/>);
 
