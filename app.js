@@ -13,10 +13,9 @@ import ReactDOM from "react-dom/client";
 //     { name: "Suresh", id : 9, role: "Full Stack Developer" },
 //     { name: "Meena", id : 10, role: "Product Owner" }
 // ];
-
+// let colors = ["red","yellow","violet","blue"];
 function  Favourite(){
     const [color , setcolor] = useState("");
-
     return (
         <div>
             <h1>This is for Learning UseState  {color} </h1>
@@ -32,9 +31,14 @@ function  Favourite(){
 
             <button className = "yellow-btn" type="button" onClick={ () => setcolor("yellow")}>yellow
             </button>
+            <button type="button" className="reset-btn" onClick={() => {
+                setcolor("reserted")
+            }}>Reset</button>
         </div>
     )
 }
+
+
 const App = () => {
     return (
         <div>
