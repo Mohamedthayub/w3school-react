@@ -1,49 +1,42 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-
-const Like = () => {
+const Welcome = () => {
     return (
         <div>
-            <button>LIke</button>
+            <h1>Welcome User</h1>
         </div>
     )
 }
-const Dislike = () => {
+const Logged = () => {
     return (
         <div>
-            <button>Dislike</button>
+            <h1>Logged in User</h1>
         </div>
     )
 }
-function LikeAndDislike(){
-    let [like , setLike] = useState("Like 👍");
-    
-    const buttonstyle = {
-    backgroundColor: like === "Like 👍" ? "green" :  "red", 
-    padding: "10px",
-    borderRadius: "10px",
-    margin: "10px" ,
-    fontSize: "20px"
-
-    }
-    return (
-        <div>
-            <button style={buttonstyle} className="button" onClick={() => {
-                if(like === "Like 👍"){
-                  setLike("Dislike 👎");
+const UserLogin = () => {
+    const [login, setLogin] = useState("login");
+    return(
+        <div className="">
+            <div>
+                 {login == "login" ? <Logged/> : <Welcome/>}            
+                <button className="button" onClick={() => {
+                
+                if(login === "login"){
+                    setLogin("logout")
                 }
                 else{
-                    setLike("Like 👍");
+                     setLogin("login");
                 }
-            }}>{like}</button>
+            }}>{login}</button>
+            </div>
         </div>
     )
 }
-
 const App = () => {
     return (
         <div>
-            <LikeAndDislike/>
+            <UserLogin/>
         </div>
     )
 }
