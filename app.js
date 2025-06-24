@@ -1,30 +1,34 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 
-function Aboutcar(){
-    const [car , setCar] = useState({
-        brand : "Hyundai venue",
-        model : 2005,
-        year : "1964",
-        color : "red"
-    })
+
+function  Counter(){
+    const [count , setCount ]  = useState(0);
     return (
-        <div>
-            <h1>{car.brand}</h1>
-            <p style={{color : "red"}}>it is a {car.color} {car.brand} from {car.year}</p>
-        </div>
+        <div className="main">
+            <div className="counterContainer">
+                <h1>counter App</h1>   
+            <h2>{count}</h2>
+            <button onClick={() => {
+                setCount(count + 1)
+            }}>increase</button>
+            <button onClick={() => {
+                setCount(count - 1)
+            }}>decrease</button>
+            <button onClick={() => {
+                setCount(0)
+            }}>reset</button>
+            </div>
+        </div>         
     )
 }
-
 const App = () => {
     return (
         <div>
-            <Aboutcar/>
+            <Counter/>
         </div>
     )
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App/>);
-
-// Create a single Hook that holds an object:

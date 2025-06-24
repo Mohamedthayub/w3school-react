@@ -9,57 +9,22 @@ body{
     padding: 0px;
     box-sizing: border-box;
 }
-.cart{
-    background-color: yellow;
-    border-radius:5px;
-    padding: 10px;
-    margin: 10px;
-    /* display: inline; */
-    
-}
-h1{
-    margin: 10px;
-}
-.red-btn{
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 10px;
-    font-weight: 600;
-    margin: 10px;
-    background-color: red;
-}
-.blue-btn{
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 10px;
-    font-weight: 600;
-    margin: 10px;
-    background-color: blue;
 
-}
-.violet-btn{
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 10px;
-    font-weight: 600;
-    margin: 10px;
-    background-color: violet;
-
-}
-.yellow-btn{
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 10px;
-    font-weight: 600;
-    margin: 10px;
-    background-color: yellow;
-
-}
-.reset-btn{   
-     padding: 10px;
-    font-size: 15px;
-    border-radius: 10px;
-    font-weight: 600;
-    margin: 10px;
-    background-color: grey;
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    h1{
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    h2{
+        text-align: center;
+    }
+    button{
+        margin-top: 10px;
+        margin-left: 10px;
+        padding: 10px;
+    }
 }
