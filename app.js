@@ -1,48 +1,25 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 
-// let people = [
-//     { name: "Arun", id: 1, role: "Software Engineer" },
-//     { name: "Priya", id: 2, role: "Frontend Developer" },
-//     { name: "Rahul", id: 3, role: "Backend Developer" },
-//     { name: "Sneha", id : 4, role: "UI/UX Designer" },
-//     { name: "Karthik", id: 5, role: "DevOps Engineer" },
-//     { name: "Divya", id : 6, role: "QA Tester" },
-//     { name: "Vikram", id : 7, role: "Project Manager" },
-//     { name: "Neha", id : 8, role: "Data Analyst" },
-//     { name: "Suresh", id : 9, role: "Full Stack Developer" },
-//     { name: "Meena", id : 10, role: "Product Owner" }
-// ];
-// let colors = ["red","yellow","violet","blue"];
-function  Favourite(){
-    const [color , setcolor] = useState("");
+function Aboutcar(){
+    const [car , setCar] = useState({
+        brand : "Hyundai venue",
+        model : 2005,
+        year : "1964",
+        color : "red"
+    })
     return (
         <div>
-            <h1>This is for Learning UseState  {color} </h1>
-            
-            <button className="red-btn" type="button" onClick={ () => setcolor("red")}>red
-            </button>
-
-            <button className ="blue-btn" type="button" onClick={ () => setcolor("blue")}>blue
-            </button>
-
-            <button className = "violet-btn" type="button" onClick={ () => setcolor("violet")}>violet
-            </button>
-
-            <button className = "yellow-btn" type="button" onClick={ () => setcolor("yellow")}>yellow
-            </button>
-            <button type="button" className="reset-btn" onClick={() => {
-                setcolor("reserted")
-            }}>Reset</button>
+            <h1>{car.brand}</h1>
+            <p style={{color : "red"}}>it is a {car.color} {car.brand} from {car.year}</p>
         </div>
     )
 }
 
-
 const App = () => {
     return (
         <div>
-            <Favourite/>
+            <Aboutcar/>
         </div>
     )
 }
@@ -50,3 +27,4 @@ const App = () => {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App/>);
 
+// Create a single Hook that holds an object:
