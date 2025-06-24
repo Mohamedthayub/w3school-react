@@ -1,31 +1,41 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 
-
-function  Counter(){
-    const [count , setCount ]  = useState(0);
+const Like = () => {
     return (
-        <div className="main">
-            <div className="counterContainer">
-                <h1>counter App</h1>   
-            <h2>{count}</h2>
-            <button onClick={() => {
-                setCount(count + 1)
-            }}>increase</button>
-            <button onClick={() => {
-                setCount(count - 1)
-            }}>decrease</button>
-            <button onClick={() => {
-                setCount(0)
-            }}>reset</button>
-            </div>
-        </div>         
+        <div>
+            <button>LIke</button>
+        </div>
     )
 }
+const Dislike = () => {
+    return (
+        <div>
+            <button>Dislike</button>
+        </div>
+    )
+}
+function LikeAndDislike(){
+    let [like , setLike] = useState("like");
+    return (
+        <div>
+            <button className="button" onClick={() => {
+                if(like === "like"){
+                    setLike("dislike");
+                    
+                }
+                else{
+                    setLike("like");
+                }
+            }}>{like}</button>
+        </div>
+    )
+}
+
 const App = () => {
     return (
         <div>
-            <Counter/>
+            <LikeAndDislike/>
         </div>
     )
 }
