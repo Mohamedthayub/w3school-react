@@ -16,16 +16,24 @@ const Dislike = () => {
     )
 }
 function LikeAndDislike(){
-    let [like , setLike] = useState("like");
+    let [like , setLike] = useState("Like 👍");
+    
+    const buttonstyle = {
+    backgroundColor: like === "Like 👍" ? "green" :  "red", 
+    padding: "10px",
+    borderRadius: "10px",
+    margin: "10px" ,
+    fontSize: "20px"
+
+    }
     return (
         <div>
-            <button className="button" onClick={() => {
-                if(like === "like"){
-                    setLike("dislike");
-                    
+            <button style={buttonstyle} className="button" onClick={() => {
+                if(like === "Like 👍"){
+                  setLike("Dislike 👎");
                 }
                 else{
-                    setLike("like");
+                    setLike("Like 👍");
                 }
             }}>{like}</button>
         </div>
