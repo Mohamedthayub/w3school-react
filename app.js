@@ -1,45 +1,48 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-const Welcome = () => {
-    return (
-        <div>
-            <h1>Welcome User</h1>
-        </div>
-    )
-}
-const Logged = () => {
-    return (
-        <div>
-            <h1>Logged in User</h1>
-        </div>
-    )
-}
-const UserLogin = () => {
-    const [login, setLogin] = useState("login");
+
+const Heading = () => {
+    const [color , setColor ] = useState("red");
+    const headingStyle = {
+        backgroundColor: color,
+        padding: "10px",
+        fontFamily: "Sans-Serif",
+        borderRadius : "10px",
+        padding : "10px",
+        margin : "10px"
+
+    }
     return(
-        <div className="">
-            <div>
-                 {login == "login" ? <Logged/> : <Welcome/>}            
-                <button className="button" onClick={() => {
-                
-                if(login === "login"){
-                    setLogin("logout")
-                }
-                else{
-                     setLogin("login");
-                }
-            }}>{login}</button>
+        <div className="main">
+            <div className="container">
+            <h1 style={headingStyle}>this is heading</h1>
+
+            <button onClick={() => {
+                setColor("yellow")
+            }} className="yellow-btn">Yellow</button>
+
+            <button onClick={() => {
+              setColor("violet")
+            }} className="violet-btn">Violet</button>
+            <button onClick={() => {
+                setColor("blue")
+            }} className="blue-btn">blue</button>
+             <button onClick={() => {
+                setColor("orange")
+            }} className="orange-btn">Orange</button> 
             </div>
         </div>
+
+
     )
 }
 const App = () => {
     return (
         <div>
-            <UserLogin/>
-        </div>
+            <Heading/>
+       </div>
+
     )
 }
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App/>);
