@@ -9,38 +9,28 @@ body{
     padding: 0px;
     box-sizing: border-box;
 }
-
-
-
-
-
 .main{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
+    h1{
+        text-align: center;
+    }
+    
+    .btn-container{
+        display: flex;
+        justify-content: center;
+        margin-top:10px;
+    }
     button{
-        margin-left: 20px;
         padding: 10px;
         border: none;
-        font-weight: 600;
+        background-color: black;
+        color: white;
         border-radius: 10px;
-
-
-    }
-    .yellow-btn{
-        background-color: yellow;
-    }
-    .violet-btn{
-        background-color: violet;
-    }
-    .blue-btn{
-        background-color: blue;
-
-    }
-    .orange-btn{
-        background-color: orange;
+        font-weight: 600;
+        font-size: 20px;
     }
 
 }
