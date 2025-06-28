@@ -8,29 +8,17 @@ body{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+
 }
+
 .main{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    h1{
-        text-align: center;
-    }
-    
-    .btn-container{
-        display: flex;
-        justify-content: center;
-        margin-top:10px;
-    }
-    button{
-        padding: 10px;
-        border: none;
-        background-color: black;
-        color: white;
-        border-radius: 10px;
-        font-weight: 600;
-        font-size: 20px;
-    }
-
+    background-color: tomato;
 }
+h3{
+    margin-top: 20px;
+}
+

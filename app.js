@@ -1,20 +1,23 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import ReactDOM from "react-dom/client";
 
-function Change(){
-    const [color,setcolor] = useState("blue");
+
+
+function Counter(){
+    const [count,setCount ] = useState(0);
+    const [name,setName]  = useState("thayub");
     
-    const changeColor  = () => {
-        setcolor("red");
-    }
-    return(
+    useEffect(() => {
+        setTimeout(() => {
+            setCount(count + 2);
+        },1000);
+    }); // i don't understand the array values . 
+    return (
         <div className="main">
-            <div>
-              <h1>the color is {color}</h1>
-              <div className="btn-container">
-                 <button onClick={changeColor}>button</button>
-              </div>
-           </div>
+            <div className="counter-container">
+                <h1> I have rendered  {count} times </h1>
+
+            </div>
         </div>
     )
 }
@@ -22,10 +25,12 @@ function Change(){
 const App = () => {
     return (
         <div>
-            <Change/>
+            <Counter/>
        </div>
     )
+
 }
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App/>);
  
