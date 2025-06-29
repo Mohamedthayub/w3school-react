@@ -1,17 +1,18 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect, use } from "react";
 import ReactDOM from "react-dom/client";
 
 
 
 function Counter(){
     const [count,setCount ] = useState(0);
-    const [name,setName]  = useState("thayub");
-    
     useEffect(() => {
         setTimeout(() => {
-            setCount(count + 2);
-        },1000);
-    }); // i don't understand the array values . 
+            setCount(count + 1);
+        },1000)   // useEffect runs on every render. That means that when the count changes, a render happens, which then triggers another effect
+        // when the component changing it will useEffect will re-render the page  
+
+
+    })
     return (
         <div className="main">
             <div className="counter-container">
