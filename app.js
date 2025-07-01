@@ -2,18 +2,21 @@ import React, { useState,useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
 
 
-function Counter(){
-    const inputElement = useRef();
+function Calculator(){
+    const [number , setNumber] = useState(0);
+    // const [count , setCounter ] = useState(0);
     
-    const btnClicked = () => {
-        console.log(inputElement.current);
-        inputElement.current.style.background = "red";
+
+    function cubeNum (num){
+        console.log("calculation Done ...");
+        return Math.pow(num,3);
     }
+    const result = cubeNum(number);
 
     return (
         <div>
-            <input type="text" ref={inputElement}></input>
-            <button onClick={btnClicked}>Click</button>
+            <input type="number" value={number} onChange={(e) => {setNumber(Number(e.target.value))}}></input>
+            <h1>Cube of the Number : {result}</h1>
         </div>
     )
 }
@@ -21,7 +24,7 @@ function Counter(){
 const App = () => {
     return (
         <div>
-            <Counter/>
+           <Calculator/>
        </div>
     )
 
