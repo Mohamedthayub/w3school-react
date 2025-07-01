@@ -17,8 +17,22 @@ body{
     align-items: center;
     height: 100vh;
     background-color: tomato;
+    flex-direction: column;
+    button{
+        padding: 10px;
+        margin-top: 10px;
+        width: 100px;
+        text-align: center; 
+        font-size: 1.5rem;
+        background-color:black;
+        color: white;
+        border: none;
+        border-radius: 10px;
+    }
+    h1{
+        margin-top: 10px;
+    }
 }
-h3{
-    margin-top: 20px;
-}
+
+
 
