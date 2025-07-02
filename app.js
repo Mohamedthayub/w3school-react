@@ -9,10 +9,10 @@ function Calculator(){
 
     function cubeNum (num){
         console.log("calculation Done ...");
+
         return Math.pow(num,3);
     }
-    const result = useMemo(() => cubeNum(number),[number]);
-
+    const result = useMemo(() => cubeNum(number));
     return (
         <div className="main">
             <div>
