@@ -1,33 +1,30 @@
-import React, { useState,useEffect, useRef,useMemo } from "react";
+import React, { useState,useEffect, useRef,useMemp,useCallback } from "react";
 import ReactDOM from "react-dom/client";
-
-
+import Header  from "./components/Header";
 function SmallCalcultor(){
-    const [number,setNumber] = useState(0);
     const [count , setCounter] = useState(0);
-    
-    function findCube(num){
-        console.log("calculation done ...")
-        return Math.pow(num,3);
-    }
-    
-    const result = useMemo(() => findCube(number), [number]);
-    /* this useMemo hook will return the memoized value  .what i have done here is when the value number changes the function will run
-     otherwise it won't run this perfomance thing we have done with  useMemo hook  */
-    return (
-        <div>
-            <div className="main">
-                 <input value={number} onChange={(e) => {
-                setNumber(e.target.value)
-            }} ></input>
-            <h1>Cube value is :{result}</h1>
-            <button onClick={() => {
-                setCounter(count  + 1)
-            }}>Count++</button>
-            <h1>Conter : {count}</h1>
-            </div>
+    const newFn = useCallback(() => {},[]);
+    /*
+    whenever the page re-render the function will create ones after 
+    whenever button click happen function will not create again . the useCallback hook  cache the function  in first render. then  it will not create next time
+    that will use from useCallback cache  memory this is how useCallback hook works 
+    */
+
+    /*
+    whenever click the button the component will re-render and  we are passing the  function to Header component the function is creating every render  .
+    to solve this problem we use useCallback hook 
+    */
+   return (
+    <div className="main">
+        <div> 
+            <Header newFn = {newFn}/> 
+              <h1>{count}</h1>
+         <button onClick={() => {
+            setCounter(count + 1)
+        }} className="btn">Increament</button>
         </div>
-    )
+    </div>
+   )
 }
 
 const App = () => {
