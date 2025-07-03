@@ -1,24 +1,28 @@
-import React, { useState,useEffect, useRef,useMemo } from "react";
+import React, { useState,useEffect,useRef} from "react";
 import ReactDOM from "react-dom/client";
 
 
-function Calculator(){
-    const [count ,setCounter] = useState(0);
+function ShowText(){
+    const[inputValue,setInputvalue] = useState("");
+    const count = useRef(0);
 
+    useEffect(() => {
+        count.current = count.current + 1;
+    })
     return (
         <div>
-            <button onClick={() => {
-                setCounter(count + 1)
-            }}>Increament</button>
+            <h1> This is Count : {count.current}</h1>
+            <input value={inputValue} onChange={(e) => {setInputvalue(e.target.value)}}></input>
+            <h1>{inputValue}</h1>
         </div>
     )
-
 }
-
 const App = () => {
     return (
-        <div>
-           <Calculator/>
+        <div className="main">
+            <div>
+              <ShowText/>
+            </div>
        </div>
     )
 
