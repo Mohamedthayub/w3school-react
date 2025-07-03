@@ -1,28 +1,21 @@
 import React, { useState,useEffect,useRef} from "react";
 import ReactDOM from "react-dom/client";
-
-
-function ShowText(){
-    const[inputValue,setInputvalue] = useState("");
-    const count = useRef(0);
-
-    useEffect(() => {
-        count.current = count.current + 1;
-    })
+const names = [{name : "thayub",id : 1},{name : "mohamed",id: 2},{name : "bilal" , id: 3}];
+const CreateHeading = (props) => {
     return (
         <div>
-            <h1> This is Count : {count.current}</h1>
-            <input value={inputValue} onChange={(e) => {setInputvalue(e.target.value)}}></input>
-            <h1>{inputValue}</h1>
+            <h1>{props.name}</h1>
         </div>
     )
 }
 const App = () => {
     return (
         <div className="main">
-            <div>
-              <ShowText/>
-            </div>
+           {
+            names.map((item) => (
+                <CreateHeading  key = {item.id}name = {item.name}/>
+            ))
+           }
        </div>
     )
 
