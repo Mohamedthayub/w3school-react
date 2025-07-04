@@ -4,6 +4,17 @@ import ReactDOM from "react-dom/client";
 
 function  Counter() {
     const [count, setCounter] = useState(0);
+    const clickCount  = useRef(0);
+    const [history, setHistory ] = useState([]);
+
+    useEffect(() => {
+        clickCount.current = clickCount.current + 1
+        setHistory(prev =>{
+            const updated = [...prev,count];
+            return updated.length > 10 ? updated.slice(-10) : updated;
+        }
+        )
+    },[count])
     return (
         <div>
             <div className="flex justify-center items-center mt-92">
@@ -20,6 +31,9 @@ function  Counter() {
                 onClick={() => {
                     setCounter(count - 1)
                 }} className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">Decreament</button>
+                <h1 className="text-center text-xl mt-4">Click Count is : {clickCount.current}</h1>
+                <h2 className="text-center text-xl mt-4">History: {history.join(", ")}</h2>
+
             </div>
                 </div>
             </div>
