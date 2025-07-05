@@ -3,10 +3,13 @@ import Navbar from "./components/Navbar.js";
 import ReactDOM from "react-dom/client";
 
 const App =  () => {
-    const [count, setCount] = useState(0);
+    const [name, setName] = useState("");
+    const input = useRef(null);
     return (
         <div>
-            <Navbar cnt = {count} fn ={setCount}/>
+            {/* <Navbar cnt = {name} fn ={setName}/> */}
+            <input ref={input} type="text"></input>
+            <button onClick={() => {console.log(input.current.value)}}>Submit</button>
         </div>
     )
 }
