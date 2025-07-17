@@ -3,16 +3,28 @@ import React, {useState,useRef, useEffect} from "react";
 import ReactDOM from "react-dom/client";
 
 
-const App = () => {
-    const [data,setData] = useState([]);
-    const inputRef = useRef(null);
+const Counter = () => {
+    const [count, setCounter] = useState(0);
     return (
         <div>
+            <h1>{count}</h1>
             <div>
-                <input ref={inputRef} type="text"></input>
-                <button onClick={() => { setData([...data,inputRef.current.value])}}>Submit</button>
-                {data.map((item,index) => { return <h1 key={index}>{item}</h1>})}
+                <button className="increament" onClick={() => {setCounter(count + 1)}}>increament</button>
             </div>
+            <div>
+                <button className="increament" onClick={() => {setCounter(0)}}>Reset</button>
+            </div>
+            <div>
+                <button className="increament" onClick={() => {setCounter(count -  1)}}>decreament</button>
+            </div>
+        </div>
+    )
+}
+
+const App = () => {
+    return (
+        <div>
+            <Counter/>
         </div>
     )
 }
