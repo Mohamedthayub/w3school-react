@@ -8,9 +8,15 @@
 </head>
 <body>
     <div id="root">
-        <h1>this is for hr tag</h1>
-        <hr>
+        <h1 id="showText"></h1>
+        <input type="text" id="userinput" onkeyup="show()">
     </div>
 
+    <script>
+        function show(){
+             let userInput = document.querySelector("#userinput")
+             userInput.value = userInput.value.toUpperCase();
+        }
+    </script>
 </body>
 </html>
