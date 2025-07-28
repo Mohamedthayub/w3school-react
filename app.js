@@ -1,19 +1,16 @@
 import React, { useState,useRef, useEffect } from "react";
 import ReactDOM from "react-dom/client";
-// import Navbar from "./src/Navbar.js";
-// import Card  from "./src/Button.js";
+// import thayub from "./images/thayub.jpg";// correct import
+import Render from "./src/Images.jsx";
+
 
 const App = () => {
-    const  Input = useRef(null); 
-    const  [data, setData ] = useState([]);
-    return (
-        <div>
-            <input type="text" ref={Input}></input>
-            <button onClick={() => {setData([...data, Input.current.value])}}>Submit</button>
-            {data.map((item,idx) => { return <h2 key={idx}>{item}</h2>})}
-        </div>
-    )
+    return <div>
+        <img src=""></img>
+        <img src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001877.png" className="image"></img>
+        <h1>Hello world</h1>
+        <Render/>
+    </div>
 }
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App/>)
+root.render(<App/>);
